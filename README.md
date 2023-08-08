@@ -1,3 +1,7 @@
+# PnID-setting-equipment-tags
+Very simple example code for placing certain annotations for preselected items of the P&ID. The first annotation will be placed at a defined point of the drawing and the following beneath it with a defined distance. If annotations are used that build a table row, then the result can act as a bill of materials table.
+Please refer to the more advanced example below if you are planning to parameterize the input like: basis point, offset, selection of drawing items, sorting of the table rows, ...
+
 # PnID-sorting-equipment-tags
 <pre>
 Problem to fix: 
