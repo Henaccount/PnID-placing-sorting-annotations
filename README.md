@@ -1,8 +1,10 @@
-# PnID-placing-equipment-tags
+this is example code, use at own risk!
+
+# PnID-placing-annotations
 Very simple example code for placing certain annotations for preselected items of the P&ID. The first annotation will be placed at a defined point of the drawing and the following beneath it with a defined distance. If annotations are used that build a table row, then the result can act as a bill of materials table.
 Please refer to the more comprehensive code example below if you are planning to parameterize the input like: basis point, offset, selection of drawing items or if you want to sort the table rows, ...
 
-# PnID-sorting-equipment-tags
+# PnID-sorting-annotations
 <pre>
 Problem to fix: 
 Equipment info tags have to be placed in a certain order gridwise on the bottom of the P&ID drawing. This is a time consuming task and the order has to be corrected during the drawing process. The command EQPANNOSORT shall do this ordering of already placed equipment annotations.
