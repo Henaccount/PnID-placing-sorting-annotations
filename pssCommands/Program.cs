@@ -14,7 +14,11 @@ using System.Text;
 using Autodesk.AutoCAD.Geometry;
 using System;
 using System.Text.RegularExpressions;
-
+using Autodesk.ProcessPower.PnPCommonDbx;
+using Autodesk.ProcessPower.PnIDObjects;
+using PlantApp = Autodesk.ProcessPower.PlantInstance.PlantApplication;
+using Autodesk.ProcessPower.ProjectManager;
+using Autodesk.ProcessPower.DataLinks;
 
 namespace pssCommands
 {
@@ -30,6 +34,36 @@ namespace pssCommands
 
     public class Program
     {
+        [CommandMethod("EQPANNOPLACE", CommandFlags.UsePickSet)]
+        public void PlaceAnnotations()
+        {
+            string myAnnoStyle = "EqpBomAnno";
+            Point3d insertPoint = new Point3d(28,20,0);
+            double offset = 0.3557;
+
+            Document doc = Application.DocumentManager.MdiActiveDocument;
+            Editor ed = doc.Editor;
+
+            PromptSelectionResult selres = ed.SelectImplied();
+            if (selres.Status == PromptStatus.Error) return;
+
+            foreach (ObjectId selobjectid in selres.Value.GetObjectIds())
+            {
+                // get the style id from the name input
+
+                ObjectId styleId = PnIDStyleUtils.GetStyleIdFromName(myAnnoStyle, true);
+
+                // now create the annotation object
+
+                Annotation anno = new Annotation();
+
+                // and place it
+
+                anno.Create(insertPoint, styleId, selobjectid);
+
+                insertPoint = new Point3d(insertPoint.X, insertPoint.Y - offset, insertPoint.Z);
+            }
+        }
 
         [CommandMethod("EQPANNOSORT")]
 
@@ -40,7 +74,7 @@ namespace pssCommands
             double originY = 0.0;
             double originZ = 0.0;
             double xshift = 0.0;
-            double yshift = 0.0; 
+            double yshift = 0.0;
 
             Editor ed =
 
@@ -97,7 +131,7 @@ namespace pssCommands
 
             List<EqpAnnotation> t = new List<EqpAnnotation>();
 
-            
+
 
             Database db =
 
@@ -283,7 +317,7 @@ namespace pssCommands
                 ed.SetImpliedSelection(forSelArr);
 
                 tr.Commit();
-                
+
             }
 
             catch (Autodesk.AutoCAD.Runtime.Exception ex)

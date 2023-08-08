@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("EQPANNOSORT “originX=0,originY=0,originZ=0,xshift=100,yshift=100”")]
+[assembly: AssemblyTitle("EQPANNOPLACE, EQPANNOSORT “originX=0,originY=0,originZ=0,xshift=100,yshift=100”")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Microsoft")]
@@ -37,5 +37,5 @@ using System.Runtime.InteropServices;
 //v3: identifizierung nach .Description anstelle von EQPSORTITEM
 //v4: v3 hat fehler v4 korrigiert
 //v5: v4 hat fehler, v5 korrigiert
-[assembly: AssemblyVersion("5.0.0.5")]
-[assembly: AssemblyFileVersion("5.0.0.5")]
+[assembly: AssemblyVersion("24.15.0.6")]
+[assembly: AssemblyFileVersion("24.15.0.6")]

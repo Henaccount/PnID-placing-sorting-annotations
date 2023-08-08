@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>pssCommands</RootNamespace>
     <AssemblyName>pssCommands</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -44,6 +45,18 @@
     </Reference>
     <Reference Include="PnIDMgd">
       <HintPath>..\..\..\..\..\inc-x64\PnIDMgd.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="PnPCommonDbxMgd">
+      <HintPath>..\..\..\..\..\inc-x64\PnPCommonDbxMgd.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="PnPDataLinks">
+      <HintPath>..\..\..\..\..\inc-x64\PnPDataLinks.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="PnPProjectManagerMgd">
+      <HintPath>..\..\..\..\..\inc-x64\PnPProjectManagerMgd.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System" />
